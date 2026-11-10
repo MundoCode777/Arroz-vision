@@ -11,7 +11,12 @@ import 'features/auth/screens/forgot_password_screen.dart';
 import 'features/auth/screens/login_screen.dart';
 import 'features/auth/screens/register_screen.dart';
 import 'features/auth/screens/splash_screen.dart';
+import 'features/detection/data/mock_disease_classifier.dart';
+import 'features/detection/providers/detection_provider.dart';
+import 'features/detection/screens/analyzing_screen.dart';
+import 'features/detection/screens/image_preview_screen.dart';
 import 'features/home/screens/home_screen.dart';
+import 'features/results/screens/result_screen.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -33,6 +38,12 @@ class MyApp extends StatelessWidget {
         return const ForgotPasswordScreen();
       case AppRoutes.home:
         return const HomeScreen();
+      case AppRoutes.preview:
+        return const ImagePreviewScreen();
+      case AppRoutes.analyzing:
+        return const AnalyzingScreen();
+      case AppRoutes.result:
+        return const ResultScreen();
       case AppRoutes.splash:
       default:
         return const SplashScreen();
@@ -41,8 +52,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => AuthProvider(AuthService()),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AuthProvider(AuthService())),
+        // Cuando exista el modelo real, aquí se cambia por
+        // TfliteDiseaseClassifier() y nada más.
+        ChangeNotifierProvider(
+          create: (_) => DetectionProvider(MockDiseaseClassifier()),
+        ),
+      ],
       child: MaterialApp(
         title: AppStrings.appName,
         debugShowCheckedModeBanner: false,
