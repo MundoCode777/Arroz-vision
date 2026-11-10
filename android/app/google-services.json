@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "368178676147",
+    "project_id": "detec-ia",
+    "storage_bucket": "detec-ia.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368178676147:android:8b513f440249b2a09f8bc6",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368178676147-aeb9leogkgjloge0cnpfr1t1l8r1v5ee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7dNPlJcVTkzSw-69NcAUZCMX6AtP0P6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368178676147-aeb9leogkgjloge0cnpfr1t1l8r1v5ee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
